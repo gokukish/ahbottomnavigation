@@ -253,11 +253,11 @@ public class AHBottomNavigation extends FrameLayout {
 	 * Create the items in the bottom navigation
 	 */
 	private void createItems() {
-		if (items.size() < MIN_ITEMS) {
+		/*if (items.size() < MIN_ITEMS) {
 			Log.w(TAG, "The items list should have at least 3 items");
 		} else if (items.size() > MAX_ITEMS) {
 			Log.w(TAG, "The items list should not have more than 5 items");
-		}
+		}*/
 
 		int layoutHeight = (int) resources.getDimension(R.dimen.bottom_navigation_height);
 
@@ -360,6 +360,7 @@ public class AHBottomNavigation extends FrameLayout {
 	 * @param linearLayout The layout where the items are added
 	 */
 	private void createClassicItems(LinearLayout linearLayout) {
+		Log.d("abnav", "createclassic");
 
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -411,7 +412,7 @@ public class AHBottomNavigation extends FrameLayout {
 			title.setText(item.getTitle(context));
 
 			if (titleTypeface != null) {
-				title.setTypeface(titleTypeface);
+				title.setTypeface(titleTypeface, Typeface.BOLD);
 			}
 
 			if (titleState == TitleState.ALWAYS_SHOW && items.size() > MIN_ITEMS) {
@@ -490,6 +491,7 @@ public class AHBottomNavigation extends FrameLayout {
 	 */
 	private void createSmallItems(LinearLayout linearLayout) {
 
+		Log.d("abnav", "createsmall");
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		float height = resources.getDimension(R.dimen.bottom_navigation_height);
@@ -537,7 +539,7 @@ public class AHBottomNavigation extends FrameLayout {
 			}
 
 			if (titleTypeface != null) {
-				title.setTypeface(titleTypeface);
+				title.setTypeface(titleTypeface, Typeface.BOLD);
 			}
 
 			if (i == currentItem) {
@@ -663,10 +665,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
 				icon.setSelected(true);
-				AHHelper.updateTopMargin(icon, inactiveMarginTop, activeMarginTop);
-				AHHelper.updateLeftMargin(notification, notificationInactiveMarginLeft, notificationActiveMarginLeft);
+//				AHHelper.updateTopMargin(icon, inactiveMarginTop, activeMarginTop);
+//				AHHelper.updateLeftMargin(notification, notificationInactiveMarginLeft, notificationActiveMarginLeft);
 				AHHelper.updateTextColor(title, itemInactiveColor, itemActiveColor);
-				AHHelper.updateTextSize(title, inactiveSize, activeSize);
+//				AHHelper.updateTextSize(title, inactiveSize, activeSize);
 				AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
 						itemInactiveColor, itemActiveColor, forceTint);
 
@@ -724,10 +726,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
 				icon.setSelected(false);
-				AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMarginTop);
-				AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
+//				AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMarginTop);
+//				AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
 				AHHelper.updateTextColor(title, itemActiveColor, itemInactiveColor);
-				AHHelper.updateTextSize(title, activeSize, inactiveSize);
+//				AHHelper.updateTextSize(title, activeSize, inactiveSize);
 				AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
 						itemActiveColor, itemInactiveColor, forceTint);
 			}
@@ -786,11 +788,11 @@ public class AHBottomNavigation extends FrameLayout {
 				icon.setSelected(true);
 
 				if (titleState != TitleState.ALWAYS_HIDE) {
-					AHHelper.updateTopMargin(icon, inactiveMargin, activeMarginTop);
-					AHHelper.updateLeftMargin(notification, notificationInactiveMarginLeft, notificationActiveMarginLeft);
-					AHHelper.updateTopMargin(notification, notificationInactiveMarginTop, notificationActiveMarginTop);
+//					AHHelper.updateTopMargin(icon, inactiveMargin, activeMarginTop);
+//					AHHelper.updateLeftMargin(notification, notificationInactiveMarginLeft, notificationActiveMarginLeft);
+//					AHHelper.updateTopMargin(notification, notificationInactiveMarginTop, notificationActiveMarginTop);
 					AHHelper.updateTextColor(title, itemInactiveColor, itemActiveColor);
-					AHHelper.updateWidth(container, notSelectedItemWidth, selectedItemWidth);
+//					AHHelper.updateWidth(container, notSelectedItemWidth, selectedItemWidth);
 				}
 
 				AHHelper.updateAlpha(title, 0, 1);
@@ -853,11 +855,11 @@ public class AHBottomNavigation extends FrameLayout {
 				icon.setSelected(false);
 
 				if (titleState != TitleState.ALWAYS_HIDE) {
-					AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMargin);
-					AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
-					AHHelper.updateTopMargin(notification, notificationActiveMarginTop, notificationInactiveMarginTop);
+//					AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMargin);
+//					AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
+//					AHHelper.updateTopMargin(notification, notificationActiveMarginTop, notificationInactiveMarginTop);
 					AHHelper.updateTextColor(title, itemActiveColor, itemInactiveColor);
-					AHHelper.updateWidth(container, selectedItemWidth, notSelectedItemWidth);
+//					AHHelper.updateWidth(container, selectedItemWidth, notSelectedItemWidth);
 				}
 
 				AHHelper.updateAlpha(title, 1, 0);
@@ -932,7 +934,7 @@ public class AHBottomNavigation extends FrameLayout {
 			}
 
 			if (notificationItem.isEmpty() && notification.getText().length() > 0) {
-				notification.setText("");
+//				notification.setText("");
 				if (animate) {
 					notification.animate()
 							.scaleX(0)
@@ -943,7 +945,7 @@ public class AHBottomNavigation extends FrameLayout {
 							.start();
 				}
 			} else if (!notificationItem.isEmpty()) {
-				notification.setText(String.valueOf(notificationItem.getText()));
+//				notification.setText(String.valueOf(notificationItem.getText()));
 				if (animate) {
 					notification.setScaleX(0);
 					notification.setScaleY(0);

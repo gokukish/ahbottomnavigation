@@ -12,8 +12,8 @@
         android:layout_width="@dimen/bottom_navigation_icon"
         android:layout_height="@dimen/bottom_navigation_icon"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_active"
         android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
-        android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
         android:gravity="center" />
 
     <TextView
@@ -21,13 +21,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_active"
         android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
-        android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
+        android:paddingBottom="@dimen/bottom_navigation_label_padding_bottom"
         android:alpha="1"
         android:gravity="center"
         android:lines="1"
         android:textColor="@color/colorBottomNavigationInactive"
         android:textSize="14sp"
+        android:textStyle="bold"
         tools:text="Label One" />
 
     <TextView
@@ -35,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/bottom_navigation_notification_height"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="@dimen/bottom_navigation_notification_margin_left"
-        android:layout_marginTop="@dimen/bottom_navigation_notification_margin_top"
-        android:alpha="0"
+        android:layout_marginStart="@dimen/bottom_navigation_notification_margin_left"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_active"
+        android:alpha="1"
         android:background="@drawable/notification_background"
         android:elevation="@dimen/bottom_navigation_notification_elevation"
         android:gravity="center"
@@ -46,6 +48,7 @@
         android:paddingRight="@dimen/bottom_navigation_notification_padding"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/bottom_navigation_notification_text_size"
+        android:text=""
         android:textStyle="bold" />
 
 </FrameLayout>

@@ -13,7 +13,7 @@
         android:layout_height="@dimen/bottom_navigation_icon"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
-        android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_inactive"
         android:gravity="center" />
 
     <TextView
@@ -22,12 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
-        android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_inactive"
+        android:paddingBottom="@dimen/bottom_navigation_label_padding_bottom"
         android:alpha="1"
         android:gravity="center"
         android:lines="1"
         android:textColor="@color/colorBottomNavigationInactive"
         android:textSize="14sp"
+        android:textStyle="bold"
         tools:text="Label One" />
 
     <TextView
@@ -35,8 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/bottom_navigation_notification_height"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="@dimen/bottom_navigation_notification_margin_left"
-        android:layout_marginTop="@dimen/bottom_navigation_notification_margin_top"
+        android:layout_marginStart="@dimen/bottom_navigation_notification_margin_left"
+        android:layout_marginTop="@dimen/bottom_navigation_margin_top_inactive"
         android:alpha="0"
         android:background="@drawable/notification_background"
         android:elevation="@dimen/bottom_navigation_notification_elevation"
